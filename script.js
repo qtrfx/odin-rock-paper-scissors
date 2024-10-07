@@ -6,13 +6,19 @@
 // Check if winner has been found
 // Repeat
 
-function getComputerChoice() {
-    const randomRoll = Math.floor(Math.random() * 3);
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+    let roundsPlayed = 0;
 
-    if (randomRoll === 0) return "rock";
-    else if (randomRoll === 1) return "paper";
-    else if (randomRoll === 2) return "scissors";
-}
+    while (roundsPlayed < 5) {
+        playRound(getHumanChoice(), getComputerChoice());
+        roundsPlayed++;
+    }
+    console.log(
+        humanScore > computerScore ? "The player wins!" : "The computer wins!"
+    );
+
 
 function getHumanChoice() {
     let invalidChoice = false;
