@@ -58,6 +58,32 @@ function getComputerChoice() {
     const randomRoll = Math.floor(Math.random() * 3);
 
 
+function checkWinner() {
+    if (roundsPlayed === 5) {
+        if (humanScore > computerScore) {
+            currentResult.textContent = 
+            `Player wins with a score of ${humanScore} to ${computerScore}!`;
+        } 
+        else if (computerScore > humanScore) {
+            currentResult.textContent = 
+            `Computer wins with a score of ${computerScore} to ${humanScore}!`;
         }
+        else {
+            currentResult.textContent =
+            `It's a draw with a score of ${humanScore} to ${computerScore}`
+        }
+        resetGameState();
+    }
+}
+
+function resetGameState() {
+    humanScore = 0;
+    computerScore = 0;
+    roundsPlayed = 0;
+    humanScoreDisplay.textContent = `Player: 0`;
+    computerScoreDisplay.textContent = `Computer: 0`;
+    hu
+}
+
     }
 });
