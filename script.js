@@ -57,6 +57,9 @@ function playRound(humanChoice, computerChoice) {
 function getComputerChoice() {
     const randomRoll = Math.floor(Math.random() * 3);
 
+    if (randomRoll === 0) return "rock";
+    else if (randomRoll === 1) return "paper";
+    else if (randomRoll === 2) return "scissors";
 }
 
 function checkWinner() {
