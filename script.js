@@ -57,6 +57,7 @@ function playRound(humanChoice, computerChoice) {
 function getComputerChoice() {
     const randomRoll = Math.floor(Math.random() * 3);
 
+}
 
 function checkWinner() {
     if (roundsPlayed === 5) {
@@ -85,5 +86,17 @@ function resetGameState() {
     hu
 }
 
+document.querySelector("body").addEventListener("click", (e) => {
+    const buttonId = e.target.id;
+
+    switch (buttonId) {
+        case "rockButton":
+            playRound("rock", getComputerChoice());
+            break;
+        case "paperButton":
+            playRound("paper", getComputerChoice());
+            break;
+        case "scissorsButton":
+            playRound("scissors", getComputerChoice());
     }
 });
